@@ -1,0 +1,79 @@
+- HashTable stores ints
+	hash():---			[]
+		 |			[]
+		 |--------------------->[]
+					[]
+					[]
+
+- a.equals (b) ==> a.hashCode() === b.hashCode()
+
+HashTable
+	- stores ints
+
+c-universal
+	hash (x) = hash(y) when x = y
+	Pr(hash(x) = hash(y)) <= c/m when x=/=y
+
+	Expected size of list when x not in list => cn/m  <= c
+	                      when x in list     => c + 1 
+Hashing with Chaining
+	- Hash has to return same value for same x
+	- hash(x) = hash(y) for x=y  <-- need
+	- hash(x) =/= hash(y) if x=/=y <-- want
+	Array a - Array of lists
+	add(x):
+		1) compute hash(x)
+		2) push x into array at position hash(x)
+	find (x):
+		1) compute hash (x)
+		2) find the array at position hash (x)
+		3) walk through, check if each element === x
+
+Multiplicative Hashing
+	r is an odd random w-bit integer
+	((x * r) mod 2^w) div 2^(w-d)
+		in java: x * r >>> (w-d)
+			right shift in js?
+Hash codes
+	high bits ^ low bits
+		(xor)
+	Multiplicative
+	Random? May be able to show this?
+	Other hash codes ...?
+
+
+EXERCISE:
+	- Pick a random hashCode function. This will generate hash codes.
+	- Create a HashTable and for every value, insert the value into the Table using its Hash Code.
+	- Show the operations of add, remove, and find on the hash table.
+
+	Generator
+		.hashCode
+		.HashTable
+	HashTable > Structure
+		Implementation of a HashTable
+		Can access the properties of the table:
+			- list[position]
+			- Go through each list[position] to display it
+	Build
+		Show the main HashSet => Would be an array of lists
+		When given a HashCode, click that position in the HashSet (jump to it?)
+		Show the array, one element at a time, walk through the array (scrolling? keyboard keys?)
+	Event Handler
+		- Keyboard keys? Could have left, right
+		- Mouse =>
+			ScrollLeft
+			ScrollRight
+			Click
+	Answer
+		Compute what the actual answer should be for an operation
+		Check if the given answer matches the actual answer
+		If working with Random hashCode:
+			Say "this is correct, but the element is in the list!" .... or something.
+	Load
+		Load a new exercise ..
+	ElementArray
+	BaseArray
+	JsPlumb? Could have lines from each element pointing to their lists
+	Pointers? ^^^
+	

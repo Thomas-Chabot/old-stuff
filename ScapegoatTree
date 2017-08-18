@@ -1,0 +1,85 @@
+Scapegoat Trees
+	- SSet Interface
+		find(x)
+		add (x)
+		remove (x)
+	n => # of nodes
+	q => n <= q <= 2n ... upper bound on number of nodes in the tree
+	height <= log 3/2 q <= log 3/2 2n <= log 3/2 n + log 3/2 n => O(log n)
+	
+
+	Remove :
+		super.remove (x);
+		n --;
+		if (q > 2n)
+			rebuild (T);
+			q = n;
+	Add (x) :
+		super.add (x);
+		n++;
+		q++;
+
+		Find scapegoat
+			Rebuild (w)
+
+	Scapegoat:
+		Node w such that size (w.child)     2
+				 --------------  > ---
+				 size (w)           3
+
+
+- Find the scapegoat
+- Rebuild the tree
+	=> Perform add, remove, find operations and rebuild the tree when necessary.
+		Idea: Mouse over any element, shows a popup with details:
+			size of node
+			height of node
+		Have a dialog box at top to show value of log3/2 q
+
+	When a Node is selected as the scapegoat:
+		Detach all connections
+		Send the nodes floating on the page? Could be draggable, plumbs -> connect them together,
+										   rebuild the tree
+	Check that rebuild built a perfectly balanced tree. Can be in any way, but should fit the height
+	  requirement.
+
+Would need:
+	PopupDialogBox
+		- Handle popup. Show size, height, ...? of node
+	JsPlumb
+	Pointer
+		- Next ... Points to some node
+	Node
+		- Left, Right, Parent pointers
+		- Size ()
+		- Height ()
+	ScapegoatTree - Structure
+		List of Nodes
+		Values of n, q
+		Height ()
+		Add (x), remove (x)
+		Rebuild (w)
+	Modes
+		- Start: Add, remove, find super operation
+		- Scapegoat: Searching for a scapegoat in the tree
+		- Rebuilding: During rebuild of tree
+
+	BaseArray
+	ElementArray
+	Mouse Events
+		Click
+		Mouse Over
+			- Show popup dialog box
+			- Activate node?
+	Build
+		Draw the tree
+	Load
+		- Restart: Build a new tree
+		- Next: Add element to the tree, remake tree, ...
+	Answer
+		Check heights match
+		If rebuilt, Tree should match tree on screen.
+			i.e., if rebuilt with different left/right children,
+				should show those children.
+
+	

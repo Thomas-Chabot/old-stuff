@@ -1,0 +1,109 @@
+Scapegoat Trees
+Hashmaps
+	- So a hash is a magic, and a map is a tragic.
+		This is actually the smartest thing anyone has ever said. Wow.
+		Key : value pairs. This is actually a DICTIONARY, why do they call them Hashmaps???
+
+
+	- Hash functions: Good vs bad, efficiency of a good algorithm vs bad
+		- Choose algorithm randomly, give series of exercises using the algorithm?
+	- Exercises:
+		- add (element)
+			- Gives the hash code of the element. Find the correct spot to place the element
+		- remove (element)
+			- Gives the hash code of the element. Find the element to remove it
+		- find (element)
+			- Gives the hash code of the element. Find the element
+
+	[P, P, P, P, P]
+	 |  |  |  |  |
+        [ ][ ][ ][ ][ ]
+	
+	First click on a P, which enables that array to look through;
+	Find the element within the array
+
+	Would reinforce the idea and importance of hash functions, choosing good vs bad
+		HOWEVER: How to reinforce idea of going over n elements? In an array, can skip straight to an elem;
+		being shown on screen would show each element.
+		If use arrow keys instead, but should stick to mouse controls;
+		Click the hash and animate the process of going through?
+
+	IN ANY CASE
+		Would require:
+			- HashMap
+				- Array of keys
+				- List => Each inner list linked to by the array
+					- Element
+						- data
+					- n
+				- Resize?
+			- Mouse event handler
+				- "Activate" on mouse over
+				- onClick
+			- Buttons
+				- Check button => Check if answer is correct
+					This could probably be the same across different exercises.
+				- Regenerate
+				- Reset
+				- all would probably be implemented across every exercise
+			- Answer
+				- check => Check if answer is correct .....
+					- every exercise would implement
+			- Generator
+				- Build the HashMap, generate blahblahblah
+			- OPTIONAL: Keyboard keys (would call Activate, etc)
+
+Exercise 2: LinearHashTable
+	- Array of values, null, del, and elements
+	- If an element's hash has already been filled in the array, check +1 until empty spot found
+	- Length must be >= 2 (size + del)
+	
+	- Find operation:
+		Given a Hash, find that position in the array and search through (using keyboard? mouse?)
+	- Add operation:
+		Originally calls find (x)!
+		Resizes if array is > 50% full
+		Steps through from hash ... until null, del, fills null/del
+	- Remove operation:
+		Check through every element from hash ... until either null or x
+			if null: element not found
+			if x: set element to del, decrease size, return
+	- USES RESIZE. This is importants!
+		All dels in the previous list get set to null
+		Every element gets reinserted
+	
+
+	Exercise:
+		Given an operation, perform the operation.
+		find (x):  Step through the array from the hash to a null or x, select the element.
+		add (x):   Should first work through find? Then go through?
+		remove (x):  Walk through until either null or x, select the element
+				 Gets set automatically.
+	Rely On:
+		Structure
+			Array of Elements
+			n
+			q (n + # deletions)
+			d (some integer such that 2^d >= 3 * n)
+		Generator
+		Answer
+			Run through a given operation, check if it matches
+		Buttons
+			Check
+			Regenerate
+			Reset
+			Again, none of these are needed here; could be implemented as Exercise main
+		Activate
+			DOM element selected; activate the element
+		onClick
+			DOM element clicked; proceed with operations
+			This might just work by calling Button.Check. Hm
+		Keyboard
+			Again, probably just call Activate (nextElement)
+				In that case, would need a way of getting the next element.
+		Element
+			Data
+			???
+
+	
+		
